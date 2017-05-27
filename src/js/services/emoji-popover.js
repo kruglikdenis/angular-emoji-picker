@@ -7,8 +7,9 @@ angular.module('vkEmojiPicker').provider('$emojiPopover', function () {
 
   this.$get = [
     '$rootScope', '$http', '$sce', '$templateCache', '$compile',
-    function ($rootScope, $http, $sce, $templateCache, $compile) {
+    function ($rootScope, $http, $sce, $templateCache, $compile, Emoji) {
       function EmojiPopover(element, config) {
+
         var $popover = {};
         var fetchPromises = {};
         var popoverLinker;
@@ -21,6 +22,7 @@ angular.module('vkEmojiPicker').provider('$emojiPopover', function () {
         // Private functions
 
         var loadTemplate = function (template) {
+            console.log(Emoji)
           if (fetchPromises[template]) {
             return fetchPromises[template];
           }

@@ -1,14 +1,20 @@
 <div class="emoji-groups">
-  <i class="emoji-group {{ ::group.icon.name }}"
-     ng-class="(group.icon.selected === selectedGroup.icon.selected) ? selectedGroup.icon.selected : ''"
-     ng-repeat="group in ::groups"
-     ng-click="changeGroup(group)">
-  </i>
-  <span class="btn-backspace" ng-click="remove()">&#x232B;</span>
+    <i class="cm-emoji-picker cm-emoji-smile"
+       ng-repeat="group in ::groups"
+       ng-click="changeGroup(group)">
+    </i>
 </div>
 <div class="emoji-container">
-  <i class="cm-emoji-picker cm-emoji-{{ ::toClassName(emoji) }}"
-     ng-repeat="emoji in selectedGroup.emoji"
-     ng-click="append(emoji)">
-  </i>
+    <input class="emoji-search" ng-model="search.name" placeholder="Search..."/>
+    <div id="{{::groupPrefix}}-{{group.short_name}}"
+         class="emoji-groups"
+         ng-repeat="group in ::groups"
+    >
+        <div class="emoji-group-label" ng-bind="group.name" ng-show="filtredEmoji.length > 0"></div>
+        <i ng-repeat="emoji in group.emoji | filter:search as filtredEmoji"
+           class="cm-emoji-picker"
+           ng-style="::getEmojiStyle(emoji)"
+           ng-click="append(emoji)">
+        </i>
+    </div>
 </div>

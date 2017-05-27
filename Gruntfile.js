@@ -34,8 +34,8 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           flatten: true,
-          src: ['src/img/*'],
-          dest: 'dist/img/',
+          src: ['src/images/*'],
+          dest: 'dist/images/emoji',
           filter: 'isFile'
         }, {
           expand: true,
