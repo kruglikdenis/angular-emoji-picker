@@ -1,4 +1,4 @@
-angular.module('vkEmojiPicker').factory('vkEmojiTransforms', [
+angular.module('ngEmojiPicker').factory('vkEmojiTransforms', [
     'EmojiGroups', 'EmojiRegexp', 'Emoji', function (EmojiGroups, EmojiRegexp, Emoji) {
         var transforms = {
             hexify: hexify,
@@ -8,8 +8,6 @@ angular.module('vkEmojiPicker').factory('vkEmojiTransforms', [
             aliasify: aliasify,
             unicodeToImage: unicodeToImage
         };
-
-        console.log(Emoji)
 
         var regex = new RegExp(':(' + EmojiGroups.all.join('|') + '):', 'g');
         var regexHex = new RegExp('(' + getUnicodes().join('|') + ')', 'g');

@@ -1,40 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a201c8d3-19c5-4317-8f51-b67a95785638" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/demo/ui-bootstrap/images/emoji/sheet_google_64.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/emoji-groups-1x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/emoji-groups.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/emojis.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/emojis@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/images/sheet_google_64.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/constants/emoji.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/css/emoji.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/js/constants/emoji-hex.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/js/directives/emoji-popover.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/js/directives/emoji-removable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/templates/emoji-button-strap.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/templates/emoji-button.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/templates/emoji-popover-strap.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/templates/emoji-popover.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/emoji-groups-1x.png" afterPath="$PROJECT_DIR$/demo/ui-bootstrap/images/emoji/emoji-groups-1x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/emoji-groups.png" afterPath="$PROJECT_DIR$/demo/ui-bootstrap/images/emoji/emoji-groups.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/emojis.png" afterPath="$PROJECT_DIR$/demo/ui-bootstrap/images/emoji/emojis.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/emojis@2x.png" afterPath="$PROJECT_DIR$/demo/ui-bootstrap/images/emoji/emojis@2x.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/img/fbchat-20170301.min.png" afterPath="$PROJECT_DIR$/demo/ui-bootstrap/images/emoji/fbchat-20170301.min.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/angular-emoji-picker.iml" afterPath="$PROJECT_DIR$/.idea/angular-emoji-picker.iml" />
+    <list default="true" id="a201c8d3-19c5-4317-8f51-b67a95785638" name="Default" comment="ghange emoji to google">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/directives/emoji-picker.directive.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/angular-strap/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/angular-strap/js/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/default/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/default/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/default/js/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/karma.conf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/js/directives/emoji-picker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/js/services/emoji-popover.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/constants/emoji-hex.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/directives/emoji-picker.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/filters/emojify.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/filters/hexify.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/filters/imagify.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/filters/unicodify.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/services/emoji-local-storage.spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/services/emoji-storage.spec.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/templates/emoji-button-bootstrap.html" afterPath="$PROJECT_DIR$/src/templates/emoji-button-picker.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/templates/emoji-popover-bootstrap.html" afterPath="$PROJECT_DIR$/src/templates/emoji-picker.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/ui-bootstrap/js/app.js" afterPath="$PROJECT_DIR$/demo/ui-bootstrap/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/emoji-picker.css" afterPath="$PROJECT_DIR$/dist/css/emoji-picker.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/emoji-picker.min.css" afterPath="$PROJECT_DIR$/dist/css/emoji-picker.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/emoji-picker.js" afterPath="$PROJECT_DIR$/dist/js/emoji-picker.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/emoji-picker.min.js" afterPath="$PROJECT_DIR$/dist/js/emoji-picker.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/emoji-picker.css" afterPath="$PROJECT_DIR$/src/css/emoji-picker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/directives/emoji-picker.js" afterPath="$PROJECT_DIR$/src/js/directives/emoji-picker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/constants/emoji-groups.js" afterPath="$PROJECT_DIR$/src/js/constants/emoji-groups.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/constants/emoji-regexp.js" afterPath="$PROJECT_DIR$/src/js/constants/emoji-regexp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/constants/emoji.js" afterPath="$PROJECT_DIR$/src/js/constants/emoji.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/emoji-picker.js" afterPath="$PROJECT_DIR$/src/js/emoji-picker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/services/emoji-popover.js" afterPath="$PROJECT_DIR$/src/js/services/emoji-popover.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/filters/aliasify.js" afterPath="$PROJECT_DIR$/src/js/filters/aliasify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/filters/emojify.js" afterPath="$PROJECT_DIR$/src/js/filters/emojify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/filters/hexify.js" afterPath="$PROJECT_DIR$/src/js/filters/hexify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/filters/imagify.js" afterPath="$PROJECT_DIR$/src/js/filters/imagify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/filters/unicodeToImage.js" afterPath="$PROJECT_DIR$/src/js/filters/unicodeToImage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/filters/unicodify.js" afterPath="$PROJECT_DIR$/src/js/filters/unicodify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/services/emoji-local-storage.js" afterPath="$PROJECT_DIR$/src/js/services/emoji-local-storage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/services/emoji-storage.js" afterPath="$PROJECT_DIR$/src/js/services/emoji-storage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/services/emoji-transforms.js" afterPath="$PROJECT_DIR$/src/js/services/emoji-transforms.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/emoji-popover-bootstrap.html" afterPath="$PROJECT_DIR$/src/templates/emoji-popover-bootstrap.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,51 +60,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="emoji-picker.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/js/directives/emoji-picker.js">
+      <file leaf-file-name="emoji-picker.directive.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/directives/emoji-picker.directive.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="71" column="60" lean-forward="false" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
+            <state relative-caret-position="559">
+              <caret line="97" column="21" lean-forward="false" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emojify.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/filters/emojify.js">
+      <file leaf-file-name="emoji-storage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/services/emoji-storage.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="47" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="47" />
+              <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="unicodeToImage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/filters/unicodeToImage.js">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="54" />
+            <state relative-caret-position="1260">
+              <caret line="84" column="36" lean-forward="false" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="imagify.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/filters/imagify.js">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="47" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="47" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emoji-button-bootstrap.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/emoji-button-bootstrap.html">
+      <file leaf-file-name="variable-text.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../imblox/src/app/imblox/components/variable-text/variable-text.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="46" lean-forward="false" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="76" />
+            <state relative-caret-position="240">
+              <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -105,50 +113,50 @@
       <file leaf-file-name="emoji-picker.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/emoji-picker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="68" column="36" lean-forward="false" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="36" />
+            <state relative-caret-position="30">
+              <caret line="2" column="65" lean-forward="false" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emoji.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/constants/emoji.js">
+      <file leaf-file-name="emoji-picker.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/emoji-picker.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16515">
-              <caret line="1" column="148243" lean-forward="false" selection-start-line="1" selection-start-column="148243" selection-end-line="1" selection-end-column="148243" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emoji-transforms.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/services/emoji-transforms.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/ui-bootstrap/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="100" column="63" lean-forward="true" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="63" />
+            <state relative-caret-position="720">
+              <caret line="48" column="67" lean-forward="false" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
               <folding>
-                <marker date="1495887639000" expanded="true" signature="2163:2169" ph="‌" />
+                <element signature="n#style#0;n#span#1;n#section#0;n#form#0;n#md-content#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emoji-popover.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/services/emoji-popover.js">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/demo/ui-bootstrap/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="8" column="64" lean-forward="false" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+            <state relative-caret-position="90">
+              <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emoji-popover-bootstrap.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/emoji-popover-bootstrap.html">
+      <file leaf-file-name="emoji-button-picker.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/emoji-button-picker.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -166,43 +174,44 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.emoji</find>
-      <find>emoji-</find>
-      <find>emoji-groups</find>
-      <find>kissing</find>
-      <find>winky_face</find>
-      <find>sweat</find>
-      <find>shit</find>
-      <find>w</find>
-      <find>wa</find>
-      <find>wat</find>
-      <find>watch:</find>
-      <find>watch:de</find>
-      <find>watch:dev</find>
-      <find>changeGroup</find>
-      <find>watch</find>
-      <find>background-ima</find>
-      <find>background</find>
-      <find>groups</find>
-      <find>getCla</find>
-      <find>toClassName</find>
-      <find>conso</find>
-      <find>emojiPopover</find>
-      <find>E</find>
-      <find>Emoj</find>
-      <find>Emoji</find>
-      <find>EmojiHe</find>
       <find>t</find>
       <find>EmojiHex</find>
       <find>change</find>
       <find>fromCodePoint</find>
+      <find>c</find>
+      <find>conso</find>
+      <find>console.</find>
+      <find>console.l</find>
+      <find>console.loo</find>
+      <find>consol</find>
+      <find>templateUrl</find>
+      <find>console.lo</find>
+      <find>s</find>
+      <find>sr</find>
+      <find>src</find>
+      <find>emoji-popover-bootstrap</find>
+      <find>v</find>
+      <find>vk</find>
+      <find>vkE</find>
+      <find>vkEmo</find>
+      <find>vkEmoj</find>
+      <find>vkEmoji</find>
+      <find>vkEmojiP</find>
+      <find>vkEmojiPi</find>
+      <find>vkEmojiPic</find>
+      <find>vkEmojiPick</find>
+      <find>vkEmojiPicke</find>
+      <find>vkEmojiPicker</find>
+      <find>emoji-picker</find>
+      <find>formatSelectedEmoji</find>
     </findStrings>
     <replaceStrings>
       <replace>.cm-emoji-</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/src</dir>
       <dir>$PROJECT_DIR$/src/js</dir>
+      <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -211,28 +220,41 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/js/filters/aliasify.js" />
         <option value="$PROJECT_DIR$/dist/js/emoji-picker.js" />
-        <option value="$PROJECT_DIR$/src/js/filters/unicodeToImage.js" />
         <option value="$PROJECT_DIR$/src/js/constants/emoji-regexp-unicode.js" />
         <option value="$PROJECT_DIR$/src/js/directives/emoji-removable.js" />
-        <option value="$PROJECT_DIR$/src/templates/emoji-button-bootstrap.html" />
         <option value="$PROJECT_DIR$/src/templates/emoji-button-strap.html" />
         <option value="$PROJECT_DIR$/src/templates/emoji-button.html" />
         <option value="$PROJECT_DIR$/src/templates/emoji-popover-strap.html" />
         <option value="$PROJECT_DIR$/src/templates/emoji-popover.html" />
         <option value="$PROJECT_DIR$/src/css/emoji.css" />
-        <option value="$PROJECT_DIR$/src/js/constants/emoji-regexp.js" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/src/js/constants/emoji-hex.js" />
-        <option value="$PROJECT_DIR$/src/js/services/emoji-popover.js" />
-        <option value="$PROJECT_DIR$/demo/ui-bootstrap/index.html" />
-        <option value="$PROJECT_DIR$/src/css/emoji-picker.css" />
-        <option value="$PROJECT_DIR$/src/js/services/emoji-transforms.js" />
         <option value="$PROJECT_DIR$/src/js/emoji-picker.js" />
+        <option value="$PROJECT_DIR$/src/css/emoji-picker.css" />
         <option value="$PROJECT_DIR$/src/templates/emoji-popover-bootstrap.html" />
-        <option value="$PROJECT_DIR$/src/js/constants/emoji.js" />
         <option value="$PROJECT_DIR$/src/js/directives/emoji-picker.js" />
+        <option value="$PROJECT_DIR$/demo/ui-bootstrap/js/app.js" />
+        <option value="$PROJECT_DIR$/src/js/constants/emoji-groups.js" />
+        <option value="$PROJECT_DIR$/src/js/constants/emoji-regexp.js" />
+        <option value="$PROJECT_DIR$/src/js/constants/emoji.js" />
+        <option value="$PROJECT_DIR$/src/js/filters/aliasify.js" />
+        <option value="$PROJECT_DIR$/src/js/filters/emojify.js" />
+        <option value="$PROJECT_DIR$/src/js/filters/hexify.js" />
+        <option value="$PROJECT_DIR$/src/js/filters/imagify.js" />
+        <option value="$PROJECT_DIR$/src/js/filters/unicodeToImage.js" />
+        <option value="$PROJECT_DIR$/src/js/filters/unicodify.js" />
+        <option value="$PROJECT_DIR$/src/js/services/emoji-local-storage.js" />
+        <option value="$PROJECT_DIR$/src/js/services/emoji-popover.js" />
+        <option value="$PROJECT_DIR$/src/js/services/emoji-storage.js" />
+        <option value="$PROJECT_DIR$/src/js/services/emoji-transforms.js" />
+        <option value="$PROJECT_DIR$/src/js/components/emoji-picker.html" />
+        <option value="$PROJECT_DIR$/src/js/components/emoji-picker.component.js" />
+        <option value="$PROJECT_DIR$/src/js/emoji-picker.run.js" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/src/templates/emoji-picker.html" />
+        <option value="$PROJECT_DIR$/src/templates/emoji-button-bootstrap.html" />
+        <option value="$PROJECT_DIR$/demo/ui-bootstrap/index.html" />
+        <option value="$PROJECT_DIR$/src/js/directives/emoji-picker.directive.js" />
       </list>
     </option>
   </component>
@@ -270,6 +292,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -452,60 +476,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-emoji-picker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-emoji-picker" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-emoji-picker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-emoji-picker" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="emoji" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-emoji-picker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-emoji-picker" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="demo" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -562,24 +532,8 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-emoji-picker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular-emoji-picker" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="demo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -593,11 +547,13 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/img" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/js/components" />
       <recent name="$PROJECT_DIR$/demo/ui-bootstrap" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/templates" />
+      <recent name="$PROJECT_DIR$/src/img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -710,12 +666,22 @@
       <workItem from="1495808600940" duration="194000" />
       <workItem from="1495878413038" duration="8876000" />
       <workItem from="1495892963989" duration="3000" />
-      <workItem from="1495893207412" duration="1984000" />
+      <workItem from="1495893207412" duration="2041000" />
+      <workItem from="1495973537523" duration="5193000" />
+      <workItem from="1495978984244" duration="85000" />
     </task>
+    <task id="LOCAL-00001" summary="ghange emoji to google">
+      <created>1495895544980</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1495895544980</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73179000" />
+    <option name="totallyTimeSpent" value="78514000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -728,17 +694,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="821" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845744" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34840426" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34840426" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845744" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39893618" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -747,6 +714,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32845744" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -766,51 +734,15 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ghange emoji to google" />
+    <option name="LAST_COMMIT_MESSAGE" value="ghange emoji to google" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/js/constants/emoji-regexp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="47" lean-forward="false" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/constants/emoji-hex.js" />
-    <entry file="file://$PROJECT_DIR$/src/js/constants/emoji-groups.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="90" column="69" lean-forward="false" selection-start-line="90" selection-start-column="69" selection-end-line="90" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/emoji-picker.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="107" column="51" lean-forward="false" selection-start-line="107" selection-start-column="51" selection-end-line="107" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/directives/emoji-removable.js" />
-    <entry file="file://$PROJECT_DIR$/dist/css/emoji-picker.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/emoji.css" />
-    <entry file="file://$PROJECT_DIR$/src/js/filters/unicodeToImage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/services/emoji-transforms.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -818,7 +750,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/directives/emoji-picker.js">
+    <entry file="file://$PROJECT_DIR$/src/js/directives/emoji-picker.directive.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1365">
           <caret line="91" column="29" lean-forward="false" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
@@ -885,38 +817,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/filters/unicodify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/filters/aliasify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/js/emoji-picker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="1962" column="0" lean-forward="false" selection-start-line="1962" selection-start-column="0" selection-end-line="1962" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/js/emoji-picker.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/filters/hexify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="46" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -935,45 +839,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="36" column="27" lean-forward="false" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/constants/emoji-regexp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/services/emoji-storage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/img/emoji-groups.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/ui-bootstrap/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="48" column="96" lean-forward="false" selection-start-line="48" selection-start-column="96" selection-end-line="48" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/constants/emoji-groups.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3195">
-          <caret line="213" column="5" lean-forward="false" selection-start-line="168" selection-start-column="2" selection-end-line="213" selection-end-column="5" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/directives/emoji-removable.js" />
@@ -985,40 +853,33 @@
     <entry file="file://$PROJECT_DIR$/src/js/constants/emoji-hex.js" />
     <entry file="file://$PROJECT_DIR$/src/css/emoji-picker.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="20" lean-forward="false" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+        <state relative-caret-position="-9569">
+          <caret line="131" column="72" lean-forward="false" selection-start-line="131" selection-start-column="72" selection-end-line="131" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/emoji-button-bootstrap.html">
+    <entry file="file://$PROJECT_DIR$/src/templates/emoji-popover-bootstrap.html" />
+    <entry file="file://$PROJECT_DIR$/dist/js/emoji-picker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="114" column="16" lean-forward="false" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/constants/emoji.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="46" lean-forward="false" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="76" />
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/emoji-popover-bootstrap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/filters/unicodeToImage.js">
+    <entry file="file://$PROJECT_DIR$/src/js/filters/aliasify.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/filters/imagify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="47" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="47" />
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1026,49 +887,166 @@
     <entry file="file://$PROJECT_DIR$/src/js/filters/emojify.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="47" lean-forward="false" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="47" />
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/constants/emoji.js">
+    <entry file="file://$PROJECT_DIR$/src/js/filters/hexify.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16515">
-          <caret line="1" column="148243" lean-forward="false" selection-start-line="1" selection-start-column="148243" selection-end-line="1" selection-end-column="148243" />
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/services/emoji-popover.js">
+    <entry file="file://$PROJECT_DIR$/src/js/filters/unicodeToImage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="8" column="64" lean-forward="false" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/emoji-picker.js">
+    <entry file="file://$PROJECT_DIR$/src/js/filters/unicodify.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="68" column="36" lean-forward="false" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="36" />
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/constants/emoji-regexp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/constants/emoji-groups.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/services/emoji-popover.js" />
+    <entry file="file://$PROJECT_DIR$/src/js/filters/imagify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/services/emoji-transforms.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="100" column="63" lean-forward="true" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="63" />
+        <state relative-caret-position="135">
+          <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
           <folding>
-            <marker date="1495887639000" expanded="true" signature="2163:2169" ph="‌" />
+            <marker date="1495975471000" expanded="true" signature="2135:2141" ph="‌" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/directives/emoji-picker.js">
+    <entry file="file://$PROJECT_DIR$/src/js/services/emoji-local-storage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="71" column="60" lean-forward="false" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/karma.conf.js" />
+    <entry file="file://$PROJECT_DIR$/.jscsrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE" />
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../imblox/src/app/imblox/components/variable-text/variable-text.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="84" column="36" lean-forward="false" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/ui-bootstrap/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="67" lean-forward="false" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
+          <folding>
+            <element signature="n#style#0;n#span#1;n#section#0;n#form#0;n#md-content#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/emoji-picker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="65" lean-forward="false" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/emoji-picker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/emoji-button-picker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/directives/emoji-picker.directive.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="97" column="21" lean-forward="false" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/services/emoji-storage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/ui-bootstrap/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
           <folding />
         </state>
       </provider>

@@ -3,7 +3,7 @@
 angular.module('vkEmojiUiBootstrapExample', [
   'ngMaterial',
   'ngMessages',
-  'vkEmojiPicker',
+  'ngEmojiPicker',
   'ui.bootstrap',
   // 'template/popover/popover-template.html'
 ]).controller('EmojiController', [

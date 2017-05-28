@@ -1,4 +1,4 @@
-angular.module('vkEmojiPicker').filter('imagify', [
+angular.module('ngEmojiPicker').filter('imagify', [
   'vkEmojiTransforms', function (vkEmojiTransforms) {
     return vkEmojiTransforms.imagify;
   }

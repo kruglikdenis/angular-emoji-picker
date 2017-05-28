@@ -1,4 +1,4 @@
-angular.module('vkEmojiPicker').filter('aliasify', [
+angular.module('ngEmojiPicker').filter('aliasify', [
     'vkEmojiTransforms', function (vkEmojiTransforms) {
         return vkEmojiTransforms.aliasify;
     }

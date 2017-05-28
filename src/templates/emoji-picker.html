@@ -13,7 +13,7 @@
         <div class="emoji-group-label" ng-bind="group.name" ng-show="filtredEmoji.length > 0"></div>
         <i ng-repeat="emoji in group.emoji | filter:search as filtredEmoji"
            class="cm-emoji-picker"
-           ng-style="::getEmojiStyle(emoji)"
+           ng-class="::toClassName(emoji)"
            ng-click="append(emoji)">
         </i>
     </div>

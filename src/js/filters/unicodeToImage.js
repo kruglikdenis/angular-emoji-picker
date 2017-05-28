@@ -1,4 +1,4 @@
-angular.module('vkEmojiPicker').filter('unicodeToImage', [
+angular.module('ngEmojiPicker').filter('unicodeToImage', [
     'vkEmojiTransforms', function (vkEmojiTransforms) {
         return vkEmojiTransforms.unicodeToImage;
     }

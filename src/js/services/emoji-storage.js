@@ -1,4 +1,4 @@
-angular.module('vkEmojiPicker').factory('vkEmojiStorage', [
+angular.module('ngEmojiPicker').factory('vkEmojiStorage', [
   '$window', 'vkEmojiLocalStorage', function ($window, emojiStorage) {
     var factory = {};
     var storage = $window.localStorage || emojiStorage;

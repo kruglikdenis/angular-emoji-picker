@@ -1,4 +1,4 @@
-angular.module('vkEmojiPicker').constant('EmojiGroups', (function () {
+angular.module('ngEmojiPicker').constant('EmojiGroups', (function () {
   var faces = ['smile', 'laughing', 'blush', 'smiley', 'relaxed',
     'smirk', 'heart_eyes', 'kissing_heart', 'kissing_closed_eyes', 'flushed',
     'relieved', 'satisfied', 'grin', 'wink', 'stuck_out_tongue_winking_eye',
