@@ -1,5 +1,5 @@
 angular.module('ngEmojiPicker').filter('unicodify', [
-  'vkEmojiTransforms', function (vkEmojiTransforms) {
-    return vkEmojiTransforms.unicodify;
+  'ngEmojiTransforms', function (ngEmojiTransforms) {
+    return ngEmojiTransforms.unicodify;
   }
 ]);

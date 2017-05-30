@@ -5,9 +5,9 @@ angular
         '$location',
         'EmojiGroups',
         'vkEmojiStorage',
-        'vkEmojiTransforms',
+        'ngEmojiTransforms',
         'Emoji',
-        function ($anchorScroll, $location, emojiGroups, storage, vkEmojiTransforms, Emoji) {
+        function ($anchorScroll, $location, emojiGroups, storage, ngEmojiTransforms, Emoji) {
             var RECENT_LIMIT = 54;
             var DEFAULT_OUTPUT_FORMAT = '';
 
@@ -31,14 +31,12 @@ angular
 
                     $scope.groups = Emoji;
                     $scope.groupPrefix = 'emoji-group';
-                    $scope.selectedGroup = emojiGroups.groups[1];   // Selecting the smiley face group by default
-                    // This next line is only if the recent group is selected by default
-                    //$scope.selectedGroup.emoji = storage.getFirst(recentLimit);
+                    $scope.selectedGroup = Emoji[0];
 
                     $scope.append = function (emoji) {
                         var emojiByFormat = formatSelectedEmoji(emoji, outputFormat);
                         if ($scope.onSelectEmoji) {
-                            $scope.onSelectEmoji({emoji: emojiByFormat.trim()});
+                            $scope.onSelectEmoji({emoji: emojiByFormat});
                         }
 
                         storage.store(emoji);
@@ -55,29 +53,29 @@ angular
                     };
 
                     $scope.toClassName = function (emoji) {
-                        return 'cm-' + emoji.short_name.replace(/_/g, '-');
+                        return 'cm-emoji-' + emoji.short_name.replace(/_/g, '-');
+                    };
+
+                    $scope.onScroll = function (groupName) {
+                        if ($scope.selectedGroup.short_name !== groupName) {
+                            $scope.selectedGroup = $scope.groups.find(function (group) {
+                                return group.short_name === groupName;
+                            });
+                            $scope.$apply();
+                        }
                     };
 
                     $scope.changeGroup = function (group) {
-                        console.log(String.fromCodePoint(0x23F0).codePointAt(0).toString(16))
-                        console.log(String.fromCharCode(parseInt('23F0', 16)))
-                        console.log(String.fromCodePoint(0x23F0))
                         var newHash = $scope.groupPrefix + '-' + group.short_name;
                         $scope.selectedGroup = group;
                         if ($location.hash() !== newHash) {
                             $location.hash(newHash);
                         } else {
                             $anchorScroll();
-
                         }
-                        // // Don't let the user pick non-unicode emoji (there are 7) when output format is unicode
-                        // if (outputFormat == 'unicode') {
-                        //     group.emoji = group.emoji.filter(function (value) {
-                        //         return emojiHex.emoji.hasOwnProperty(value);
-                        //     });
-                        // }
-                        // $scope.selectedGroup = group;
-                        //
+
+                        console.log(storage.getFirst(recentLimit));
+
                         // if ($scope.selectedGroup.name === 'recent') {
                         //     $scope.selectedGroup.emoji = storage.getFirst(recentLimit);
                         // }
@@ -87,14 +85,14 @@ angular
                         element.remove();
                     });
 
-
                     function formatSelectedEmoji(emoji, type) {
-                        emoji = [' :', emoji, ':'].join('');
+                        emoji = [':', emoji.short_name, ':'].join('');
                         if (type == 'unicode') {
-                            return vkEmojiTransforms.emojify(emoji);
-                        } else {
-                            return emoji;
+
+                            return ngEmojiTransforms.emojify(emoji);
                         }
+
+                        return emoji;
                     }
                 }
             };

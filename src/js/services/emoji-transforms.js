@@ -1,4 +1,4 @@
-angular.module('ngEmojiPicker').factory('vkEmojiTransforms', [
+angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
     'EmojiGroups', 'EmojiRegexp', 'Emoji', function (EmojiGroups, EmojiRegexp, Emoji) {
         var transforms = {
             hexify: hexify,
@@ -9,79 +9,67 @@ angular.module('ngEmojiPicker').factory('vkEmojiTransforms', [
             unicodeToImage: unicodeToImage
         };
 
-        var regex = new RegExp(':(' + EmojiGroups.all.join('|') + '):', 'g');
-        var regexHex = new RegExp('(' + getUnicodes().join('|') + ')', 'g');
+        var swappedHex = getSwappedHex();
+        var regex = new RegExp(':(' + Object.keys(swappedHex).join('|') + '):', 'g');
+        var regexHex = new RegExp('(' + Object.values(swappedHex).join('|') + ')', 'g');
         var emojiRegexp = EmojiRegexp;
+        
+        function getSwappedHex() {
+            var swappedHex = {};
 
-        function getUnicodes() {
-          var swappedHex = {};
-          var unicodes = [];
-          //
-          // angular.forEach(EmojiHex.emoji, function (value, key) {
-          //   swappedHex[value] = key;
-          //   unicodes.push(value);
-          // });
-          //
-          return unicodes.reverse();
+            angular.forEach(Emoji, function (group) {
+                angular.forEach(group.emoji, function (emoji) {
+                    var alias = emoji.short_name.replace(/\+/g, '\\+');
+                    swappedHex[alias] = emoji.hex;
+                })
+            });
+
+            return swappedHex;
         }
 
         function hexify(text) {
-            // if (text == null) {
-            //     return '';
-            // }
-            //
-            // var emojiRegex = /\:([a-z0-9_+-]+)(?:\[((?:[^\]]|\][^:])*\]?)\])?\:/g;
-            // var matches = text.match(emojiRegex);
-            //
-            // if (matches === null) {
-            //     return text;
-            // }
-            //
-            // for (var i = 0; i < matches.length; i++) {
-            //     var emojiString = matches[i];
-            //     var property = emojiString.replace(/\:/g, '');
-            //
-            //     if (EmojiHex.emoji.hasOwnProperty(property)) {
-            //         text = text.replace(emojiString, EmojiHex.emoji[property]);
-            //     }
-            // }
-            //
-            // return text;
+            if (text === null) return '';
+            var emojiRegex = /\:([a-z0-9_+-]+)(?:\[((?:[^\]]|\][^:])*\]?)\])?\:/g;
+            var matches = text.match(emojiRegex);
+            if (matches === null) return text;
+            for (var i = 0; i < matches.length; i++) {
+                var emojiString = matches[i];
+                var property = emojiString.replace(/\:/g, '');
+                if (swappedHex.hasOwnProperty(property)) {
+                    text = text.replace(emojiString, swappedHex[property]);
+                }
+            }
+            return text;
         }
 
         function imagify(input) {
-            // if (input == null) {
-            //     return '';
-            // }
-            //
-            // return input.replace(regex, function (match, text) {
-            //     var className = text.replace(/_/g, '-');
-            //     var output = ['<i contenteditable="false" class="cm-emoji-picker cm-emoji-', className, '" alt="', text, '" title=":', text, ':">&zwnj;</i>'];
-            //
-            //     return output.join('');
-            // });
+            if (input === null) return '';
+
+            return input.replace(regex, function (match, text) {
+                var className = text.replace(/_/g, '-');
+                var output = [
+                    '<i contenteditable="false" class="cm-emoji-picker cm-emoji-',
+                    className,
+                    '" alt="', text, '" title=":', text, ':">&zwnj;</i>'
+                ];
+                return output.join('');
+            });
         }
 
         function unicodify(text) {
-            if (text == null) {
-                return '';
-            }
-
+            if (text === null) return '';
             var matches = text.match(regexHex);
-
-            if (matches === null) {
-                return text;
-            }
+            if (matches === null) return text;
 
             for (var i = 0, len = matches.length; i < len; i++) {
                 var hexString = matches[i];
-
+                var unicode;
                 if (hexString.indexOf('-') > -1) {
                     var codePoints = hexString.split('-');
-                    var unicode = eval('String.fromCodePoint(0x' + codePoints.join(', 0x') + ')');
+                    unicode = eval('String.fromCodePoint(0x' + codePoints.join(', 0x') + ')');
                 } else {
                     var codePoint = ['0x', hexString].join('');
-                    var unicode = String.fromCodePoint(codePoint);
+                    unicode = String.fromCodePoint(codePoint);
                 }
 
                 text = text.replace(hexString, unicode);
@@ -91,14 +79,20 @@ angular.module('ngEmojiPicker').factory('vkEmojiTransforms', [
         }
 
         function aliasify(text) {
-            // if (text == null) {
-            //     return '';
-            // }
-            //
-            // return text.replace(emojiRegexp, function (match) {
-            //     var hex = match.codePointAt(0).toString(16);
-            //     return (EmojiHex.codes[hex]) ? ':' + EmojiHex.codes[hex] + ':' : '';
-            // });
+            if (text === null) return '';
+
+            return text.replace(emojiRegexp, function (match) {
+                var hex = match.codePointAt(0).toString(16);
+                var result = '';
+                angular.forEach(swappedHex, function (value, key) {
+                    if (value.toLowerCase() === hex.toLowerCase()) {
+                        result = ':' + key + ':';
+                        return;
+                    }
+                });
+
+                return result;
+            });
         }
 
         function unicodeToImage(text) {

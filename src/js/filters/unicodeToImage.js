@@ -1,6 +1,6 @@
 angular.module('ngEmojiPicker').filter('unicodeToImage', [
-    'vkEmojiTransforms', function (vkEmojiTransforms) {
-        return vkEmojiTransforms.unicodeToImage;
+    'ngEmojiTransforms', function (ngEmojiTransforms) {
+        return ngEmojiTransforms.unicodeToImage;
     }
 ]);
 

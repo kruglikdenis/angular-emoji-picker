@@ -1,13 +1,15 @@
 <div class="emoji-groups">
-    <i class="cm-emoji-picker cm-emoji-smile"
+    <i class="cm-emoji-picker"
+       ng-class="{'{{group.class}}': true, 'active-group': (group.short_name === selectedGroup.short_name)}"
        ng-repeat="group in ::groups"
        ng-click="changeGroup(group)">
     </i>
 </div>
-<div class="emoji-container">
+<div class="emoji-container" emoji-scroll scroll-event="::onScroll(group)">
     <input class="emoji-search" ng-model="search.name" placeholder="Search..."/>
     <div id="{{::groupPrefix}}-{{group.short_name}}"
          class="emoji-groups"
+         data-group="{{group.short_name}}"
          ng-repeat="group in ::groups"
     >
         <div class="emoji-group-label" ng-bind="group.name" ng-show="filtredEmoji.length > 0"></div>

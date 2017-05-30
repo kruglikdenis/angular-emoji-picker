@@ -1,5 +1,5 @@
 angular.module('ngEmojiPicker').filter('imagify', [
-  'vkEmojiTransforms', function (vkEmojiTransforms) {
-    return vkEmojiTransforms.imagify;
+  'ngEmojiTransforms', function (ngEmojiTransforms) {
+    return ngEmojiTransforms.imagify;
   }
 ]);
