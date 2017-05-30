@@ -13,7 +13,7 @@
     "dist/css/emoji-picker.css"
   ],
   "dependencies": {
-    "angular": "1.5.x",
+    "angular": "1.5.8",
     "angular-sanitize": "1.5.x",
     "angular-bootstrap": "^2.2.0"
   },

@@ -1,5 +1,5 @@
 angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
-    'EmojiGroups', 'EmojiRegexp', 'Emoji', function (EmojiGroups, EmojiRegexp, Emoji) {
+    'EmojiRegexp', 'Emoji', function (EmojiRegexp, Emoji) {
         var transforms = {
             hexify: hexify,
             imagify: imagify,

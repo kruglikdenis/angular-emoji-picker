@@ -3,11 +3,10 @@ angular
     .directive('emojiPicker', [
         '$anchorScroll',
         '$location',
-        'EmojiGroups',
-        'vkEmojiStorage',
+        'ngEmojiStorage',
         'ngEmojiTransforms',
         'Emoji',
-        function ($anchorScroll, $location, emojiGroups, storage, ngEmojiTransforms, Emoji) {
+        function ($anchorScroll, $location, storage, ngEmojiTransforms, Emoji) {
             var RECENT_LIMIT = 54;
             var DEFAULT_OUTPUT_FORMAT = '';
 

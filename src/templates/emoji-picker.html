@@ -6,7 +6,16 @@
     </i>
 </div>
 <div class="emoji-container" emoji-scroll scroll-event="::onScroll(group)">
-    <input class="emoji-search" ng-model="search.name" placeholder="Search..."/>
+    <input class="emoji-search"
+           ng-model="search.name"
+           placeholder="Search..."
+           ng-model-options="{
+                'debounce': {
+                    'default': 100,
+                    'blur': 0
+                }
+            }"
+    />
     <div id="{{::groupPrefix}}-{{group.short_name}}"
          class="emoji-groups"
          data-group="{{group.short_name}}"

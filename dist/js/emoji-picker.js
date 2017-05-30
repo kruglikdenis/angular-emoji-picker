@@ -4,6 +4,7 @@ angular.module("templates/emoji-button-picker.html", []).run(["$templateCache", 
   $templateCache.put("templates/emoji-button-picker.html",
     "<i ng-class=\"selectorClass ? selectorClass : 'cm-emoji-picker cm-emoji-smile'\"\n" +
     "   uib-popover-template=\"'templates/emoji-picker.html'\"\n" +
+    "   popover-class=\"popover-emoji\"\n" +
     "   popover-placement=\"{{ !placement && 'left' || placement }}\"\n" +
     "   popover-title=\"{{ title }}\"\n" +
     "   popover-trigger=\"{{ !trigger && 'click' || trigger }}\"\n" +
@@ -23,7 +24,16 @@ angular.module("templates/emoji-picker.html", []).run(["$templateCache", functio
     "    </i>\n" +
     "</div>\n" +
     "<div class=\"emoji-container\" emoji-scroll scroll-event=\"::onScroll(group)\">\n" +
-    "    <input class=\"emoji-search\" ng-model=\"search.name\" placeholder=\"Search...\"/>\n" +
+    "    <input class=\"emoji-search\"\n" +
+    "           ng-model=\"search.name\"\n" +
+    "           placeholder=\"Search...\"\n" +
+    "           ng-model-options=\"{\n" +
+    "                'debounce': {\n" +
+    "                    'default': 100,\n" +
+    "                    'blur': 0\n" +
+    "                }\n" +
+    "            }\"\n" +
+    "    />\n" +
     "    <div id=\"{{::groupPrefix}}-{{group.short_name}}\"\n" +
     "         class=\"emoji-groups\"\n" +
     "         data-group=\"{{group.short_name}}\"\n" +
@@ -345,11 +355,10 @@ angular
     .directive('emojiPicker', [
         '$anchorScroll',
         '$location',
-        'EmojiGroups',
-        'vkEmojiStorage',
+        'ngEmojiStorage',
         'ngEmojiTransforms',
         'Emoji',
-        function ($anchorScroll, $location, emojiGroups, storage, ngEmojiTransforms, Emoji) {
+        function ($anchorScroll, $location, storage, ngEmojiTransforms, Emoji) {
             var RECENT_LIMIT = 54;
             var DEFAULT_OUTPUT_FORMAT = '';
 
@@ -367,11 +376,10 @@ angular
                     onSelectEmoji: '&?'
                 },
                 link: function ($scope, element, attrs) {
-
                     var recentLimit = parseInt(attrs.recentLimit, 10) || RECENT_LIMIT;
                     var outputFormat = attrs.outputFormat || DEFAULT_OUTPUT_FORMAT;
 
-                    $scope.groups = Emoji;
+                    $scope.groups = [getRecentGroup()].concat(Emoji);
                     $scope.groupPrefix = 'emoji-group';
                     $scope.selectedGroup = Emoji[0];
 
@@ -382,16 +390,7 @@ angular
                         }
 
                         storage.store(emoji);
-                    };
-
-                    $scope.remove = function () {
-                        if (angular.isDefined($scope.model)) {
-                            var words = $scope.model.split(' ');
-                            words.pop();
-                            $scope.model = words.join(' ').trim();
-
-                            fireOnChangeFunc();
-                        }
+                        $scope.groups[0].emoji = storage.getFirst(recentLimit);
                     };
 
                     $scope.toClassName = function (emoji) {
@@ -415,12 +414,6 @@ angular
                         } else {
                             $anchorScroll();
                         }
-
-                        console.log(storage.getFirst(recentLimit));
-
-                        // if ($scope.selectedGroup.name === 'recent') {
-                        //     $scope.selectedGroup.emoji = storage.getFirst(recentLimit);
-                        // }
                     };
 
                     $scope.$on('$destroy', function () {
@@ -435,6 +428,17 @@ angular
                         }
 
                         return emoji;
+                    }
+
+                    function getRecentGroup() {
+                        var emoji = storage.getFirst(recentLimit);
+                        return {
+                            name: 'Recent',
+                            short_name: 'Recent',
+                            order: 0,
+                            emoji: emoji,
+                            class: 'cm-emoji-stopwatch'
+                        }
                     }
                 }
             };
@@ -507,102 +511,104 @@ angular.module('ngEmojiPicker').filter('unicodify', [
   }
 ]);
 
-angular.module('ngEmojiPicker').factory('vkEmojiLocalStorage', function () {
-  var factory = {
-    length: 0
-  };
-  var storage = {};
+angular.module('ngEmojiPicker').factory('ngEmojiLocalStorage', function () {
+    var factory = {
+        length: 0
+    };
+    var storage = {};
 
-  var countLength = function (storageObject) {
-    var length = 0;
+    var countLength = function (storageObject) {
+        var length = 0;
 
-    angular.forEach(storageObject, function () {
-      length += 1;
-    });
+        angular.forEach(storageObject, function () {
+            length += 1;
+        });
 
-    return length;
-  };
-
-  factory.setItem = function (key, value) {
-    storage[key] = value;
-    factory.length = countLength(storage);
-  };
-
-  factory.getItem = function (name) {
-    var value = storage[name];
-
-    if (value == null) {
-      return null;
-    }
-
-    return value;
-  };
-
-  factory.removeItem = function (key) {
-    var value = factory.getItem(key);
-    delete storage[key];
-    factory.length = countLength(storage);
-
-    return value;
-  };
-
-  factory.clear = function () {
-    storage = {};
-  };
-
-  factory.key = function () {
-    throw new Error('Realization required');
-  };
-
-  return factory;
-});
-
-angular.module('ngEmojiPicker').factory('vkEmojiStorage', [
-  '$window', 'vkEmojiLocalStorage', function ($window, emojiStorage) {
-    var factory = {};
-    var storage = $window.localStorage || emojiStorage;
-
-    factory.store = function (value) {
-      var emojiString = storage.getItem('emojiPicker');
-
-      if (emojiString == null) {
-        var emojiArray = [];
-      } else {
-        var emojiArray = JSON.parse(emojiString);
-        var emojiIndex = emojiArray.indexOf(value);
-
-        if (emojiIndex >= 0) {
-          emojiArray.splice(emojiIndex, 1);
-        }
-      }
-
-      emojiArray.unshift(value);
-      storage.setItem('emojiPicker', JSON.stringify(emojiArray));
+        return length;
     };
 
-    factory.getFirst = function (count) {
-      var count = count || 1;
-      var emojiString = storage.getItem('emojiPicker');
+    factory.setItem = function (key, value) {
+        storage[key] = value;
+        factory.length = countLength(storage);
+    };
 
-      if (emojiString == null) {
-        return [];
-      }
+    factory.getItem = function (name) {
+        var value = storage[name];
 
-      var emojiArray = JSON.parse(emojiString);
+        if (value == null) {
+            return null;
+        }
 
-      return emojiArray.slice(0, count);
+        return value;
+    };
+
+    factory.removeItem = function (key) {
+        var value = factory.getItem(key);
+        delete storage[key];
+        factory.length = countLength(storage);
+
+        return value;
     };
 
     factory.clear = function () {
-      storage.clear();
+        storage = {};
+    };
+
+    factory.key = function () {
+        throw new Error('Realization required');
     };
 
     return factory;
-  }
+});
+
+angular.module('ngEmojiPicker').factory('ngEmojiStorage', [
+    '$window', 'ngEmojiLocalStorage', function ($window, emojiStorage) {
+        var factory = {};
+        var storage = $window.localStorage || emojiStorage;
+
+        factory.store = function (value) {
+            var emojiString = storage.getItem('emojiPicker');
+
+            if (emojiString == null) {
+                var emojiArray = [];
+            } else {
+                var emojiArray = JSON.parse(emojiString);
+                var emojiIndex = emojiArray.findIndex(function(emoji) {
+                    return emoji.name === value.name;
+                });
+
+                if (emojiIndex >= 0) {
+                    emojiArray.splice(emojiIndex, 1);
+                }
+            }
+
+            emojiArray.unshift(value);
+            storage.setItem('emojiPicker', JSON.stringify(emojiArray));
+        };
+
+        factory.getFirst = function (count) {
+            var count = count || 1;
+            var emojiString = storage.getItem('emojiPicker');
+
+            if (emojiString == null) {
+                return [];
+            }
+
+            var emojiArray = JSON.parse(emojiString);
+
+            return emojiArray.slice(0, count);
+        };
+
+        factory.clear = function () {
+            storage.clear();
+        };
+
+        return factory;
+    }
 ]);
 
 angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
-    'EmojiGroups', 'EmojiRegexp', 'Emoji', function (EmojiGroups, EmojiRegexp, Emoji) {
+    'EmojiRegexp', 'Emoji', function (EmojiRegexp, Emoji) {
         var transforms = {
             hexify: hexify,
             imagify: imagify,
