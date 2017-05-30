@@ -1,43 +1,45 @@
 angular.module('ngEmojiPicker').factory('vkEmojiStorage', [
-  '$window', 'vkEmojiLocalStorage', function ($window, emojiStorage) {
-    var factory = {};
-    var storage = $window.localStorage || emojiStorage;
+    '$window', 'vkEmojiLocalStorage', function ($window, emojiStorage) {
+        var factory = {};
+        var storage = $window.localStorage || emojiStorage;
 
-    factory.store = function (value) {
-      var emojiString = storage.getItem('emojiPicker');
+        factory.store = function (value) {
+            var emojiString = storage.getItem('emojiPicker');
 
-      if (emojiString == null) {
-        var emojiArray = [];
-      } else {
-        var emojiArray = JSON.parse(emojiString);
-        var emojiIndex = emojiArray.indexOf(value);
+            if (emojiString == null) {
+                var emojiArray = [];
+            } else {
+                var emojiArray = JSON.parse(emojiString);
+                var emojiIndex = emojiArray.findIndex(function(emoji) {
+                    return emoji.name === value.name;
+                });
 
-        if (emojiIndex >= 0) {
-          emojiArray.splice(emojiIndex, 1);
-        }
-      }
+                if (emojiIndex >= 0) {
+                    emojiArray.splice(emojiIndex, 1);
+                }
+            }
 
-      emojiArray.unshift(value);
-      storage.setItem('emojiPicker', JSON.stringify(emojiArray));
-    };
+            emojiArray.unshift(value);
+            storage.setItem('emojiPicker', JSON.stringify(emojiArray));
+        };
 
-    factory.getFirst = function (count) {
-      var count = count || 1;
-      var emojiString = storage.getItem('emojiPicker');
+        factory.getFirst = function (count) {
+            var count = count || 1;
+            var emojiString = storage.getItem('emojiPicker');
 
-      if (emojiString == null) {
-        return [];
-      }
+            if (emojiString == null) {
+                return [];
+            }
 
-      var emojiArray = JSON.parse(emojiString);
+            var emojiArray = JSON.parse(emojiString);
 
-      return emojiArray.slice(0, count);
-    };
+            return emojiArray.slice(0, count);
+        };
 
-    factory.clear = function () {
-      storage.clear();
-    };
+        factory.clear = function () {
+            storage.clear();
+        };
 
-    return factory;
-  }
+        return factory;
+    }
 ]);

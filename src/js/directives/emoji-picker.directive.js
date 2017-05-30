@@ -25,11 +25,10 @@ angular
                     onSelectEmoji: '&?'
                 },
                 link: function ($scope, element, attrs) {
-
                     var recentLimit = parseInt(attrs.recentLimit, 10) || RECENT_LIMIT;
                     var outputFormat = attrs.outputFormat || DEFAULT_OUTPUT_FORMAT;
 
-                    $scope.groups = Emoji;
+                    $scope.groups = [getRecentGroup()].concat(Emoji);
                     $scope.groupPrefix = 'emoji-group';
                     $scope.selectedGroup = Emoji[0];
 
@@ -40,16 +39,7 @@ angular
                         }
 
                         storage.store(emoji);
-                    };
-
-                    $scope.remove = function () {
-                        if (angular.isDefined($scope.model)) {
-                            var words = $scope.model.split(' ');
-                            words.pop();
-                            $scope.model = words.join(' ').trim();
-
-                            fireOnChangeFunc();
-                        }
+                        $scope.groups[0].emoji = storage.getFirst(recentLimit);
                     };
 
                     $scope.toClassName = function (emoji) {
@@ -73,12 +63,6 @@ angular
                         } else {
                             $anchorScroll();
                         }
-
-                        console.log(storage.getFirst(recentLimit));
-
-                        // if ($scope.selectedGroup.name === 'recent') {
-                        //     $scope.selectedGroup.emoji = storage.getFirst(recentLimit);
-                        // }
                     };
 
                     $scope.$on('$destroy', function () {
@@ -93,6 +77,17 @@ angular
                         }
 
                         return emoji;
+                    }
+
+                    function getRecentGroup() {
+                        var emoji = storage.getFirst(recentLimit);
+                        return {
+                            name: 'Recent',
+                            short_name: 'Recent',
+                            order: 0,
+                            emoji: emoji,
+                            class: 'cm-emoji-stopwatch'
+                        }
                     }
                 }
             };
