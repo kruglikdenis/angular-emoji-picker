@@ -28,7 +28,8 @@ angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
         }
 
         function hexify(text) {
-            if (text === null) return '';
+            if (!text) return '';
+
             var emojiRegex = /\:([a-z0-9_+-]+)(?:\[((?:[^\]]|\][^:])*\]?)\])?\:/g;
             var matches = text.match(emojiRegex);
             if (matches === null) return text;
@@ -43,7 +44,7 @@ angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
         }
 
         function imagify(input) {
-            if (input === null) return '';
+            if (!input) return '';
 
             return input.replace(regex, function (match, text) {
                 var className = text.replace(/_/g, '-');
@@ -57,7 +58,8 @@ angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
         }
 
         function unicodify(text) {
-            if (text === null) return '';
+            if (!text) return '';
+
             var matches = text.match(regexHex);
             if (matches === null) return text;
 
@@ -79,7 +81,7 @@ angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
         }
 
         function aliasify(text) {
-            if (text === null) return '';
+            if (!text) return '';
 
             return text.replace(emojiRegexp, function (match) {
                 var hex = match.codePointAt(0).toString(16);
