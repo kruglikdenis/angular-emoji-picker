@@ -30,6 +30,11 @@
     cursor: pointer;
 }
 
+.emoji-button {
+    background: url(../images/emoji/sheet_google_64.png);
+    background-size: 0 0;
+}
+
 .emoji-container {
     margin: 0 -10px;
     min-width: 200px;

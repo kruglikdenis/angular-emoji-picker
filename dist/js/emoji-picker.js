@@ -3,6 +3,7 @@ angular.module('templates-dist', ['templates/emoji-button-picker.html', 'templat
 angular.module("templates/emoji-button-picker.html", []).run(["$templateCache", function ($templateCache) {
   $templateCache.put("templates/emoji-button-picker.html",
     "<i ng-class=\"selectorClass ? selectorClass : 'cm-emoji-picker cm-emoji-smile'\"\n" +
+    "   class=\"emoji-button\"\n" +
     "   uib-popover-template=\"'templates/emoji-picker.html'\"\n" +
     "   popover-class=\"popover-emoji\"\n" +
     "   popover-placement=\"{{ !placement && 'left' || placement }}\"\n" +
@@ -10,7 +11,8 @@ angular.module("templates/emoji-button-picker.html", []).run(["$templateCache", 
     "   popover-trigger=\"{{ !trigger && 'click' || trigger }}\"\n" +
     "   popover-append-to-body=\"appendToBody || false\"\n" +
     "   popover-is-open=\"popoverIsOpen || false\"\n" +
-    "></i>\n" +
+    ">\n" +
+    "</i>\n" +
     "");
 }]);
 
@@ -25,11 +27,12 @@ angular.module("templates/emoji-picker.html", []).run(["$templateCache", functio
     "</div>\n" +
     "<div class=\"emoji-container\" emoji-scroll scroll-event=\"::onScroll(group)\">\n" +
     "    <input class=\"emoji-search\"\n" +
-    "           ng-model=\"search.name\"\n" +
+    "           ng-model=\"search\"\n" +
     "           placeholder=\"Search...\"\n" +
+    "           ng-change=\"onSearchEmoji(search)\"\n" +
     "           ng-model-options=\"{\n" +
     "                'debounce': {\n" +
-    "                    'default': 100,\n" +
+    "                    'default': 200,\n" +
     "                    'blur': 0\n" +
     "                }\n" +
     "            }\"\n" +
@@ -37,10 +40,11 @@ angular.module("templates/emoji-picker.html", []).run(["$templateCache", functio
     "    <div id=\"{{::groupPrefix}}-{{group.short_name}}\"\n" +
     "         class=\"emoji-groups\"\n" +
     "         data-group=\"{{group.short_name}}\"\n" +
-    "         ng-repeat=\"group in ::groups\"\n" +
+    "         ng-repeat=\"group in filtredGroups\"\n" +
     "    >\n" +
-    "        <div class=\"emoji-group-label\" ng-bind=\"group.name\" ng-show=\"filtredEmoji.length > 0\"></div>\n" +
-    "        <i ng-repeat=\"emoji in group.emoji | filter:search as filtredEmoji\"\n" +
+    "        <div class=\"emoji-group-label\" ng-bind=\"group.name\" ng-show=\"group.emoji.length > 0\">\n" +
+    "        </div>\n" +
+    "        <i ng-repeat=\"emoji in group.emoji\"\n" +
     "           class=\"cm-emoji-picker\"\n" +
     "           ng-class=\"::toClassName(emoji)\"\n" +
     "           ng-click=\"append(emoji)\">\n" +
@@ -380,6 +384,8 @@ angular
                     var outputFormat = attrs.outputFormat || DEFAULT_OUTPUT_FORMAT;
 
                     $scope.groups = [getRecentGroup()].concat(Emoji);
+                    $scope.filtredGroups = $scope.groups;
+                    $scope.search = '';
                     $scope.groupPrefix = 'emoji-group';
                     $scope.selectedGroup = Emoji[0];
 
@@ -406,6 +412,26 @@ angular
                         }
                     };
 
+                    $scope.onSearchEmoji = function (search) {
+                        var groups = $scope.groups;
+                        if (search) {
+                            groups = groups.map(function (group) {
+                                var result = {name: group.name};
+                                result.emoji = group.emoji.filter(function (emoji) {
+                                    if (emoji.name === null) {
+                                        emoji.name = '';
+                                    }
+
+                                    return emoji.name.toLowerCase().indexOf(search.toLowerCase(), 0) >= 0;
+                                });
+
+                                return result;
+                            });
+                        }
+
+                        $scope.filtredGroups = groups;
+                    };
+
                     $scope.changeGroup = function (group) {
                         var newHash = $scope.groupPrefix + '-' + group.short_name;
                         $scope.selectedGroup = group;
@@ -415,10 +441,6 @@ angular
                             $anchorScroll();
                         }
                     };
-
-                    $scope.$on('$destroy', function () {
-                        element.remove();
-                    });
 
                     function formatSelectedEmoji(emoji, type) {
                         emoji = [':', emoji.short_name, ':'].join('');

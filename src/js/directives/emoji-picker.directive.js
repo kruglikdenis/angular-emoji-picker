@@ -28,6 +28,8 @@ angular
                     var outputFormat = attrs.outputFormat || DEFAULT_OUTPUT_FORMAT;
 
                     $scope.groups = [getRecentGroup()].concat(Emoji);
+                    $scope.filtredGroups = $scope.groups;
+                    $scope.search = '';
                     $scope.groupPrefix = 'emoji-group';
                     $scope.selectedGroup = Emoji[0];
 
@@ -54,6 +56,26 @@ angular
                         }
                     };
 
+                    $scope.onSearchEmoji = function (search) {
+                        var groups = $scope.groups;
+                        if (search) {
+                            groups = groups.map(function (group) {
+                                var result = {name: group.name};
+                                result.emoji = group.emoji.filter(function (emoji) {
+                                    if (emoji.name === null) {
+                                        emoji.name = '';
+                                    }
+
+                                    return emoji.name.toLowerCase().indexOf(search.toLowerCase(), 0) >= 0;
+                                });
+
+                                return result;
+                            });
+                        }
+
+                        $scope.filtredGroups = groups;
+                    };
+
                     $scope.changeGroup = function (group) {
                         var newHash = $scope.groupPrefix + '-' + group.short_name;
                         $scope.selectedGroup = group;
@@ -63,10 +85,6 @@ angular
                             $anchorScroll();
                         }
                     };
-
-                    $scope.$on('$destroy', function () {
-                        element.remove();
-                    });
 
                     function formatSelectedEmoji(emoji, type) {
                         emoji = [':', emoji.short_name, ':'].join('');

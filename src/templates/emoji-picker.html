@@ -7,11 +7,12 @@
 </div>
 <div class="emoji-container" emoji-scroll scroll-event="::onScroll(group)">
     <input class="emoji-search"
-           ng-model="search.name"
+           ng-model="search"
            placeholder="Search..."
+           ng-change="onSearchEmoji(search)"
            ng-model-options="{
                 'debounce': {
-                    'default': 100,
+                    'default': 200,
                     'blur': 0
                 }
             }"
@@ -19,10 +20,11 @@
     <div id="{{::groupPrefix}}-{{group.short_name}}"
          class="emoji-groups"
          data-group="{{group.short_name}}"
-         ng-repeat="group in ::groups"
+         ng-repeat="group in filtredGroups"
     >
-        <div class="emoji-group-label" ng-bind="group.name" ng-show="filtredEmoji.length > 0"></div>
-        <i ng-repeat="emoji in group.emoji | filter:search as filtredEmoji"
+        <div class="emoji-group-label" ng-bind="group.name" ng-show="group.emoji.length > 0">
+        </div>
+        <i ng-repeat="emoji in group.emoji"
            class="cm-emoji-picker"
            ng-class="::toClassName(emoji)"
            ng-click="append(emoji)">

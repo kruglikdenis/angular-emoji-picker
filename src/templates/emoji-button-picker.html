@@ -1,4 +1,5 @@
 <i ng-class="selectorClass ? selectorClass : 'cm-emoji-picker cm-emoji-smile'"
+   class="emoji-button"
    uib-popover-template="'templates/emoji-picker.html'"
    popover-class="popover-emoji"
    popover-placement="{{ !placement && 'left' || placement }}"
@@ -6,4 +7,5 @@
    popover-trigger="{{ !trigger && 'click' || trigger }}"
    popover-append-to-body="appendToBody || false"
    popover-is-open="popoverIsOpen || false"
-></i>
+>
+</i>
