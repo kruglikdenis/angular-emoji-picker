@@ -44,7 +44,7 @@ angular.module("templates/emoji-picker.html", []).run(["$templateCache", functio
     "    >\n" +
     "        <div class=\"emoji-group-label\" ng-bind=\"group.name\" ng-show=\"group.emoji.length > 0\">\n" +
     "        </div>\n" +
-    "        <i ng-repeat=\"emoji in group.emoji\"\n" +
+    "        <i ng-repeat=\"emoji in group.emoji track by $index\"\n" +
     "           class=\"cm-emoji-picker\"\n" +
     "           ng-class=\"::toClassName(emoji)\"\n" +
     "           ng-click=\"append(emoji)\">\n" +
@@ -642,7 +642,7 @@ angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
 
         var swappedHex = getSwappedHex();
         var regex = new RegExp(':(' + Object.keys(swappedHex).join('|') + '):', 'g');
-        var regexHex = new RegExp('(' + Object.values(swappedHex).join('|') + ')', 'g');
+        var regexHex = new RegExp('(' + _getObjectValues(swappedHex).join('|') + ')', 'g');
         var emojiRegexp = EmojiRegexp;
         
         function getSwappedHex() {
@@ -656,6 +656,12 @@ angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
             });
 
             return swappedHex;
+        }
+
+        function _getObjectValues(object) {
+            return Object.keys(object).map(function(key) {
+                return object[key];
+            });
         }
 
         function hexify(text) {

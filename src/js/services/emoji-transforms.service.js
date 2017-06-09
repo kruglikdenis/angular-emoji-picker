@@ -11,7 +11,7 @@ angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
 
         var swappedHex = getSwappedHex();
         var regex = new RegExp(':(' + Object.keys(swappedHex).join('|') + '):', 'g');
-        var regexHex = new RegExp('(' + Object.values(swappedHex).join('|') + ')', 'g');
+        var regexHex = new RegExp('(' + _getObjectValues(swappedHex).join('|') + ')', 'g');
         var emojiRegexp = EmojiRegexp;
         
         function getSwappedHex() {
@@ -25,6 +25,12 @@ angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
             });
 
             return swappedHex;
+        }
+
+        function _getObjectValues(object) {
+            return Object.keys(object).map(function(key) {
+                return object[key];
+            });
         }
 
         function hexify(text) {
