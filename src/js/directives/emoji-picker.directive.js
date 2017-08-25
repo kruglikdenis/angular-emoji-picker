@@ -41,6 +41,7 @@ angular
 
                         storage.store(emoji);
                         $scope.groups[0].emoji = storage.getFirst(recentLimit);
+                        $scope.filtredGroups[0].emoji = storage.getFirst(recentLimit);
                     };
 
                     $scope.toClassName = function (emoji) {

@@ -1,5 +1,5 @@
 angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
-    'EmojiRegexp', 'Emoji', function (EmojiRegexp, Emoji) {
+    'EmojiRegexp', 'Emoji', 'EmojiHex', function (EmojiRegexp, Emoji, EmojiHex) {
         var transforms = {
             hexify: hexify,
             imagify: imagify,
@@ -30,7 +30,7 @@ angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
         function _getObjectValues(object) {
             return Object.keys(object).map(function(key) {
                 return object[key];
-            });
+            }).reverse();
         }
 
         function hexify(text) {
@@ -90,16 +90,25 @@ angular.module('ngEmojiPicker').factory('ngEmojiTransforms', [
             if (!text) return '';
 
             return text.replace(emojiRegexp, function (match) {
-                var hex = match.codePointAt(0).toString(16);
-                var result = '';
-                angular.forEach(swappedHex, function (value, key) {
-                    if (value.toLowerCase() === hex.toLowerCase()) {
-                        result = ':' + key + ':';
-                        return;
-                    }
+                var hex = null;
+                Object.keys(EmojiHex).forEach(function (key) {
+                   if (match == EmojiHex[key]) {
+                       hex = key;
+                       return;
+                   }
                 });
 
-                return result;
+                var result = null;
+                if (hex) {
+                    angular.forEach(swappedHex, function (value, key) {
+                        if (value.toLowerCase() === hex.toLowerCase()) {
+                            result = ':' + key + ':';
+                            return;
+                        }
+                    });
+                }
+
+                return (result) ? result : match;
             });
         }
 

@@ -26,7 +26,7 @@
         </div>
         <i ng-repeat="emoji in group.emoji track by $index"
            class="cm-emoji-picker"
-           ng-class="::toClassName(emoji)"
+           ng-class="toClassName(emoji)"
            ng-click="append(emoji)">
         </i>
     </div>

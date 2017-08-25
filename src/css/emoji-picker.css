@@ -28,6 +28,8 @@
     margin-right: .5em;
     width: 20px;
     cursor: pointer;
+    background: url(../images/emoji/sheet_google_64.png);
+    background-size: 4100%;
 }
 
 .emoji-button {
@@ -119,27 +121,6 @@
 
 .emoji-popover .emoji-popover-content {
     padding: 9px 14px;
-}
-
-@media all and (-webkit-min-device-pixel-ratio: 1), all and (min--moz-device-pixel-ratio: 1), all and (-o-min-device-pixel-ratio: 1), all and (min-device-pixel-ratio: 1), all and (min-resolution: 96dpi) {
-    .cm-emoji-picker {
-        background: url(../images/emoji/sheet_google_64.png);
-        background-size: 4100%;
-    }
-}
-
-@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min-device-pixel-ratio: 1.5), all and (min-resolution: 144dpi) {
-    .cm-emoji-picker {
-        background: url(../images/emoji/sheet_google_64.png);
-        background-size: 4100%;
-    }
-}
-
-@-moz-document url-prefix() {
-    .cm-emoji-picker {
-        background: transparent url(../images/emoji/sheet_google_64.png);
-        background-size: 4100%;
-    }
 }
 
 .emoji-groups .emoji-group {
@@ -747,7 +728,7 @@
 .cm-emoji-facepunch{background-position: 35% 67.5%;}
 .cm-emoji-wave{background-position: 35% 82.5%;}
 .cm-emoji-ok-hand{background-position: 35% 97.5%;}
-.cm-emoji-+1{background-position: 37.5% 10%;}
+.cm-emoji-like{background-position: 37.5% 10%;}
 .cm-emoji--1{background-position: 37.5% 25%;}
 .cm-emoji-clap{background-position: 37.5% 40%;}
 .cm-emoji-open-hands{background-position: 37.5% 55%;}
